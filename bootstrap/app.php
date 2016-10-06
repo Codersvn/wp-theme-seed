@@ -26,7 +26,7 @@ add_action('wp_enqueue_scripts', 'theme_enqueue_scripts');
 /**
  * helpers
  */
-function assets($path)
+function asset($path)
 {
     return substr($path, 0, 1) == '/' ? get_stylesheet_directory_uri() . '/assets' . $path : get_stylesheet_directory_uri() . '/assets/' . $path;
 }
