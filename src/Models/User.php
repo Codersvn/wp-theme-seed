@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
-use NFWP\Models\NFModel;
+use NFWP\Models\Model;
 
-class User extends NFModel
+class User extends Model
 {
     protected $table = NFWP_DB_TABLE_PREFIX . 'users';
 }

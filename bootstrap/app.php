@@ -1,13 +1,15 @@
 <?php
 require __DIR__ . '/../vendor/autoload.php';
 
-global $wpdb;
-
-define('NFWP_DB_TABLE_PREFIX', $wpdb->prefix);
-
 /**
  * Enqueue scripts and stylesheet
  */
+add_action('wp_enqueue_scripts', 'theme_enqueue_scripts');
+add_action('wp_enqueue_scripts', 'theme_enqueue_style');
+/**
+ * Theme support
+ */
+add_theme_support('post-thumbnails');
 
 function theme_enqueue_style()
 {
@@ -20,13 +22,10 @@ function theme_enqueue_scripts()
     wp_enqueue_script('template-browserify', get_stylesheet_directory_uri() . '/dist/app.js', 'template-scripts');
 }
 
-add_action('wp_enqueue_scripts', 'theme_enqueue_style');
-add_action('wp_enqueue_scripts', 'theme_enqueue_scripts');
-
 /**
  * helpers
  */
-function assets($path)
+function asset($path)
 {
     return substr($path, 0, 1) == '/' ? get_stylesheet_directory_uri() . '/assets' . $path : get_stylesheet_directory_uri() . '/assets/' . $path;
 }
