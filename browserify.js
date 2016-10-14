@@ -5,5 +5,5 @@ module.exports = function() {
         .pipe(browserify({
             insertGlobals: true
         }))
-        .pipe(gulp.dest('./dist'));
+        .pipe(gulp.dest('./dist/js'));
 }
