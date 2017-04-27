@@ -1,5 +1,8 @@
 <?php
-require __DIR__ . '/../vendor/autoload.php';
+$vendor_autoload_file = __DIR__ . '/../vendor/autoload.php';
+if (file_exists($vendor_autoload_file)) {
+    require $vendor_autoload_file;
+}
 
 /**
  * Enqueue scripts and stylesheet
