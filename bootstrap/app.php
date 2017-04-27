@@ -13,7 +13,7 @@ add_theme_support('post-thumbnails');
 
 function theme_enqueue_style()
 {
-    wp_enqueue_style('template-style', get_stylesheet_directory_uri() . '/dist/css/app.css', false);
+    wp_enqueue_style('template-style', get_stylesheet_directory_uri() . '/dist/css/app.all.css', false);
 }
 
 function theme_enqueue_scripts()

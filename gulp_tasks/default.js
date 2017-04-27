@@ -4,6 +4,6 @@ module.exports = [
 	    'scripts',
         'browserify',
         'sass',
-        'minify_css'
+        'concat'
     ]
 ];

@@ -2375,3 +2375,5 @@ if (typeof jQuery === 'undefined') {
   })
 
 }(jQuery);
+
+console.log('/assets/js/scripts/test.js');

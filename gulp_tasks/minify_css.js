@@ -2,22 +2,20 @@ var gulp = require('gulp');
 var cssmin = require('gulp-cssmin');
 var rename = require('gulp-rename');
 var concat = require("gulp-concat");
-
+var bust = require('gulp-buster');
 module.exports = [
-    ['sass'],
+    ['concat'],
     function() {
         gulp.src([
-                './bower_components/bootstrap/dist/css/bootstrap.css',
-                './bower_components/bootstrap/dist/css/bootstrap-theme.css',
-                './bower_components/slick-carousel/slick/slick.css',
-                './bower_components/animate.css/animate.min.css',
-                './dist/css/app.css'
+                './dist/css/app.all.css'
             ])
             .pipe(cssmin())
             .pipe(rename({
                 suffix: '.min'
             }))
-            .pipe(concat("app.min.css"))
-            .pipe(gulp.dest('./dist/css/'));
+            .pipe(concat("app.all.min.css"))
+            .pipe(gulp.dest('./dist/css/'))
+            .pipe(bust({relativePath: './dist/css'}))
+            .pipe(gulp.dest('.'));
     }
 ];

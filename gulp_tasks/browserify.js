@@ -3,7 +3,7 @@ var browserify = require('gulp-browserify');
 module.exports = function() {
     return gulp.src('./assets/js/browserify/app.js')
         .pipe(browserify({
-            insertGlobals: true
+            transform: ['babelify'],
         }))
         .pipe(gulp.dest('./dist/js'));
 }
